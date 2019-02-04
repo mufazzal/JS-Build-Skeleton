@@ -1,0 +1,50 @@
+{
+  "name": "skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "npm run clean && npm run lint && node scripts/build.js",
+    "start": "webpack-dev-server",
+    "start:dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "start:prod": "cross-env NODE_ENV=production webpack-dev-server",
+    "lint": "eslint src/**/*.js src/**/*.jsx",
+    "lint:fix": "eslint src/**/*.js src/**/*.jsx --fix",
+    "clean:dev_eu": "rimraf output/DEV_EU",
+    "build:dev_eu": "npm run lint && npm run clean:dev_eu && webpack --watch --env.enviorment dev --env.region EU ",
+    "start:dev_eu": "webpack-dev-server --env.enviorment dev --env.region EU ",
+    "clean": "rimraf output"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.0.1",
+    "eslint": "^5.11.1",
+    "eslint-plugin-react": "^7.12.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.19.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "raw-loader": "^1.0.0",
+    "react": "^16.7.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
